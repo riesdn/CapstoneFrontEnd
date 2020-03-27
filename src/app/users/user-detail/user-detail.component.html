@@ -1,0 +1,70 @@
+
+<app-menu></app-menu>
+
+<div class="component">
+    
+    <h6>User Detail</h6>
+
+    <div class="detail-table">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="userId" class="input-group-text fake-th">ID:</label>
+            </div>
+            <input id="userId" name="ID" class="form-control" [(ngModel)]="user.id" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="username" class="input-group-text fake-th">Username:</label>
+            </div>
+            <input id="username" name="username" class="form-control" [(ngModel)]="user.username" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="password" class="input-group-text fake-th">Password:</label>
+            </div>
+            <input id="password" class="form-control" [(ngModel)]="user.password" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label class="input-group-text fake-th">Name:</label>
+            </div>
+            <input class="form-control" aria-label="First Name" [(ngModel)]="user.firstName" type="text" disabled>
+            <input class="form-control" aria-label="Last Name" [(ngModel)]="user.lastName" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="userPhone" class="input-group-text fake-th">Phone:</label>
+            </div>
+            <input id="userPhone" class="form-control" [(ngModel)]="user.phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="userEmail" class="input-group-text fake-th">Email:</label>
+            </div>
+            <input id="userEmail" class="form-control" [(ngModel)]="user.email" type="email" disabled>
+        </div>
+        <div class="inline-checkboxes">
+            <div class="form-check form-check-inline checkbox">
+                <input class="form-check-input" [(ngModel)]="user.isReviewer" type="checkbox" id="isReviewer" value="Reviewer" disabled>
+                <label class="form-check-label" for="isReviewer">Reviewer</label>
+            </div>
+            <div class="form-check form-check-inline checkbox">
+                <input class="form-check-input" [(ngModel)]="user.isAdmin" type="checkbox" id="isAdmin" value="Admin" disabled>
+                <label class="form-check-label" for="isAdmin">Admin</label>
+            </div>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="isReviewer" class="input-group-text fake-th">Reviewer:</label>
+            </div>
+            <input id="isReviewer" class="form-control" [(ngModel)]="user.isReviewer" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="isAdmin" class="input-group-text fake-th">Admin:</label>
+            </div>
+            <input id="isAdmin" class="form-control" [(ngModel)]="user.isAdmin" type="text" disabled>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+
+<app-menu></app-menu>
+
+<div class="component">
+    
+    <h6>All Users</h6>
+
+    <table class="table table-sm table-bordered table-striped">
+        <thead class="thead-light">
+            <th>ID</th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Reviewer</th>
+            <th>Admin</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let u of users">
+                <td>{{u.id}}</td>
+                <td>{{u.username}}</td>
+                <td>{{u.firstName}} {{u.lastName}}</td>
+                <td>{{u.phone}}</td>
+                <td>
+                    <a href="mailto:{{u.email}}" target="_blank">{{u.email != null ? "Email" : ""}}</a>
+                </td>
+                <td>{{u.isReviewer}}</td>
+                <td>{{u.isAdmin}}</td>
+                <td>
+                    <a routerLink="/users/detail/{{u.id}}">Detail</a>
+                    <span> || </span>
+                    <a routerLink="/users/edit/{{u.id}}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
