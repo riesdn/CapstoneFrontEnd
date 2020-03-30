@@ -1,2 +1,5 @@
 
-<a class="nav-link" routerLink="{{menu.route}}" routerLinkActive="active" title="{{menu.tooltip}}">{{menu.display}}</a>
+<a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" routerLink="{{menu.baseRoute}}" routerLinkActive="active" title="{{menu.tooltip}}">{{menu.display}}s</a>
+<div class="dropdown-menu">
+    <a class="dropdown-item" routerLink="{{menu.baseRoute + 'create'}}">New {{menu.display}}</a>
+</div>

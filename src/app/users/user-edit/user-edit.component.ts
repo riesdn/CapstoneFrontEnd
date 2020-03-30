@@ -13,12 +13,19 @@ export class UserEditComponent implements OnInit {
   user: User = new User();
 
   save(): void {
-
+    this.usersvc.update(this.user).subscribe(
+      res => {
+        console.debug("Update User successful! ", res);
+        this.router.navigateByUrl(`/users/detail/${this.user.id}`);
+      },
+      err => { 
+        console.error("ERROR: user-edit.component.ts, usersvc.update(this.user)", err);
+      }
+    );
   }
 
   cancel(): void {
-    let prev = this.route.snapshot;
-    console.log(prev);
+    this.router.navigateByUrl("/users/list");
   }
 
   constructor(

@@ -12,6 +12,26 @@ export class UserDetailComponent implements OnInit {
 
   user: User = new User();
 
+  edit(): void {
+    this.router.navigateByUrl(`/users/edit/${this.user.id}`);
+  }
+
+  back(): void {
+    this.router.navigateByUrl("/users/list");
+  }
+
+  delete(): void {
+    this.usersvc.remove(this.user).subscribe(
+      res => {
+        console.debug("User Delete Success! ", res);
+        this.router.navigateByUrl("/users/list");
+      },
+      err => {
+        console.error("ERROR: user-detail.component.ts, usersvc.remove(this.user)", err);
+      }
+    );
+  }
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,

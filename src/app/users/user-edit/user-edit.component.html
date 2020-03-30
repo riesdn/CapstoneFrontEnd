@@ -3,7 +3,7 @@
 
 <div class="component">
     
-    <h6>User Detail</h6>
+    <h6>User Edit</h6>
 
     <div class="detail-table">
         <div class="input-group input-group-sm">
@@ -16,44 +16,44 @@
             <div class="input-group-prepend">
                 <label for="username" class="input-group-text fake-th">Username:</label>
             </div>
-            <input id="username" name="username" class="form-control" [(ngModel)]="user.username" type="text" disabled>
+            <input id="username" name="username" class="form-control" [(ngModel)]="user.username" type="text">
         </div>
         <div class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <label for="password" class="input-group-text fake-th">Password:</label>
             </div>
-            <input id="password" class="form-control" [(ngModel)]="user.password" type="text" disabled>
+            <input id="password" class="form-control" [(ngModel)]="user.password" type="text">
         </div>
         <div class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <label class="input-group-text fake-th">Name:</label>
             </div>
-            <input class="form-control" aria-label="First Name" [(ngModel)]="user.firstName" type="text" disabled>
-            <input class="form-control" aria-label="Last Name" [(ngModel)]="user.lastName" type="text" disabled>
+            <input class="form-control" aria-label="First Name" [(ngModel)]="user.firstName" type="text" placeholder="First Name">
+            <input class="form-control" aria-label="Last Name" [(ngModel)]="user.lastName" type="text" placeholder="Last Name">
         </div>
         <div class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <label for="userPhone" class="input-group-text fake-th">Phone:</label>
             </div>
-            <input id="userPhone" class="form-control" [(ngModel)]="user.phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" disabled>
+            <input id="userPhone" class="form-control" [(ngModel)]="user.phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx">
         </div>
         <div class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <label for="userEmail" class="input-group-text fake-th">Email:</label>
             </div>
-            <input id="userEmail" class="form-control" [(ngModel)]="user.email" type="email" disabled>
+            <input id="userEmail" class="form-control" [(ngModel)]="user.email" type="email" placeholder="example@gmail.com">
         </div>
         <div class="inline-checkboxes">
-            <div class="form-check form-check-inline checkbox">
-                <input class="form-check-input" [(ngModel)]="user.isReviewer" type="checkbox" id="isReviewer" value="Reviewer" disabled>
+            <div class="form-check form-check-inline user-checkbox user-checkbox-enabled">
+                <input class="form-check-input" [(ngModel)]="user.isReviewer" type="checkbox" id="isReviewer" value="Reviewer">
                 <label class="form-check-label" for="isReviewer">Reviewer</label>
             </div>
-            <div class="form-check form-check-inline checkbox">
-                <input class="form-check-input" [(ngModel)]="user.isAdmin" type="checkbox" id="isAdmin" value="Admin" disabled>
+            <div class="form-check form-check-inline user-checkbox user-checkbox-enabled">
+                <input class="form-check-input" [(ngModel)]="user.isAdmin" type="checkbox" id="isAdmin" value="Admin">
                 <label class="form-check-label" for="isAdmin">Admin</label>
             </div>
         </div>
-        <div class="input-group input-group-sm">
+        <!-- <div class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <label for="isReviewer" class="input-group-text fake-th">Reviewer:</label>
             </div>
@@ -64,7 +64,7 @@
                 <label for="isAdmin" class="input-group-text fake-th">Admin:</label>
             </div>
             <input id="isAdmin" class="form-control" [(ngModel)]="user.isAdmin" type="text" disabled>
-        </div>
+        </div> -->
     </div>
 
     <div class="button-group">

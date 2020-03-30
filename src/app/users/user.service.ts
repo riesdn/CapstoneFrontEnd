@@ -18,6 +18,10 @@ export class UserService {
     return this.http.get(`${url}/${id}`) as Observable<User>;
   }
 
+  check(username: any): Observable<User> {
+    return this.http.get(`${url}/check/${username}`) as Observable<User>;
+  }
+
   update(user: User): Observable<any> {
     return this.http.put(`${url}/${user.id}`, user) as Observable<any>;
   }

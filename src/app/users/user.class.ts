@@ -6,8 +6,8 @@ export class User {
     password: string = '';
     firstName: string = '';
     lastName: string = '';
-    phone: string = '';
-    email: string = '';
+    phone: string;
+    email: string;
     isReviewer: boolean = false;
     isAdmin: boolean = false;
 

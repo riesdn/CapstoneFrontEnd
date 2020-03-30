@@ -2,12 +2,14 @@
 export class Menu {
     
     display: string;
-    route: string;
+    mainRoute: string;
+    baseRoute: string;
     tooltip: string;
 
-    constructor(display: string, route: string, tooltip: string) {
+    constructor(display: string, mainRoute: string, baseRoute: string, tooltip: string) {
         this.display = display;
-        this.route = route;
+        this.mainRoute = mainRoute;
+        this.baseRoute = baseRoute;
         this.tooltip = tooltip;
     }
 

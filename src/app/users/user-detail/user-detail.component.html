@@ -44,16 +44,16 @@
             <input id="userEmail" class="form-control" [(ngModel)]="user.email" type="email" disabled>
         </div>
         <div class="inline-checkboxes">
-            <div class="form-check form-check-inline checkbox">
+            <div class="form-check form-check-inline user-checkbox">
                 <input class="form-check-input" [(ngModel)]="user.isReviewer" type="checkbox" id="isReviewer" value="Reviewer" disabled>
                 <label class="form-check-label" for="isReviewer">Reviewer</label>
             </div>
-            <div class="form-check form-check-inline checkbox">
+            <div class="form-check form-check-inline user-checkbox">
                 <input class="form-check-input" [(ngModel)]="user.isAdmin" type="checkbox" id="isAdmin" value="Admin" disabled>
                 <label class="form-check-label" for="isAdmin">Admin</label>
             </div>
         </div>
-        <div class="input-group input-group-sm">
+        <!-- <div class="input-group input-group-sm">
             <div class="input-group-prepend">
                 <label for="isReviewer" class="input-group-text fake-th">Reviewer:</label>
             </div>
@@ -64,7 +64,13 @@
                 <label for="isAdmin" class="input-group-text fake-th">Admin:</label>
             </div>
             <input id="isAdmin" class="form-control" [(ngModel)]="user.isAdmin" type="text" disabled>
-        </div>
+        </div> -->
+    </div>
+
+    <div class="button-group">
+        <button (click)="edit()" class="btn btn-primary btn-sm">Edit</button>
+        <button (click)="back()" class="btn btn-secondary btn-sm">Back</button>
+        <button (click)="delete()" class="btn btn-danger btn-sm">Delete</button>
     </div>
 
 </div>

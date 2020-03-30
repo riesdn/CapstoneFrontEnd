@@ -24,21 +24,26 @@ import { RequestlineCreateComponent } from './requestlines/requestline-create/re
 
 const routes: Routes = [
   { path: "", redirectTo: "/users/list", pathMatch: "full" },
+
+  { path: "users", component: UserListComponent },
   { path: "users/list", component: UserListComponent },
   { path: "users/detail/:id", component: UserDetailComponent },
   { path: "users/edit/:id", component: UserEditComponent },
   { path: "users/create", component: UserCreateComponent },
 
+  { path: "vendors", component: VendorListComponent },
   { path: "vendors/list", component: VendorListComponent },
   { path: "vendors/detail/:id", component: VendorDetailComponent },
   { path: "vendors/edit/:id", component: VendorEditComponent },
   { path: "vendors/create", component: VendorCreateComponent },
 
+  { path: "products", component: ProductListComponent },
   { path: "products/list", component: ProductListComponent },
   { path: "products/detail/:id", component: ProductDetailComponent },
   { path: "products/edit/:id", component: ProductEditComponent },
   { path: "products/create", component: ProductCreateComponent },
 
+  { path: "requests", component: RequestListComponent },
   { path: "requests/list", component: RequestListComponent },
   { path: "requests/detail/:id", component: RequestDetailComponent },
   { path: "requests/edit/:id", component: RequestEditComponent },

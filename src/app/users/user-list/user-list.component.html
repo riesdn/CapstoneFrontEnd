@@ -25,8 +25,8 @@
                 <td>
                     <a href="mailto:{{u.email}}" target="_blank">{{u.email != null ? "Email" : ""}}</a>
                 </td>
-                <td>{{u.isReviewer}}</td>
-                <td>{{u.isAdmin}}</td>
+                <td class="check">{{u.isReviewer ? "&#10003;" : ""}}</td>
+                <td class="check">{{u.isAdmin ? "&#10003;" : ""}}</td>
                 <td>
                     <a routerLink="/users/detail/{{u.id}}">Detail</a>
                     <span> || </span>

@@ -18,20 +18,39 @@
     font-weight: bold;
 }
 
+.check {
+    text-align: center;
+}
+
 .inline-checkboxes {
     display: flex;
     justify-content: space-evenly;
 }
 
-.checkbox {
+.user-checkbox {
     margin-left: -2%;
+    background-color: #e9ecef;
+    font-weight: bold;
+    padding: 4px 8px;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 0.2rem;
+}
+
+.user-checkbox-enabled {
+    background-color: #ffffff;
 }
 
 .button-group {
     display: flex;
     justify-content: center;
+    margin: 3% auto;
 }
 
 .button-group button {
-    margin: auto 5%;
+    margin: auto 3%;
+}
+
+.form-control::placeholder {
+    color: rgb(163, 163, 163);
 }
