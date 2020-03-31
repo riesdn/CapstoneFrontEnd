@@ -46,7 +46,7 @@ export class UserCreateComponent implements OnInit {
       console.log(`${this.message}`);
       return false;
     }
-    if(!this.isUnique(user.username)) return false;
+    //if(!this.isUnique(user.username)) return false;
     console.log("Error checking moved to next condition.");
     if(user.username.length > 30) {
       this.message = "Username must be 30 characters or less!";
@@ -83,12 +83,12 @@ export class UserCreateComponent implements OnInit {
       console.log(`${this.message}`);
       return false;
     }
-    if(user.phone.length > 12) {
+    if(user.phone != null && user.phone.length > 12) {
       this.message = "Phone Number must be 12 characters or less!";
       console.log(`${this.message}`);
       return false;
     }
-    if(user.email.length > 255) {
+    if(user.email != null && user.email.length > 255) {
       this.message = "Email must be less than 255 characters!";
       console.log(`${this.message}`);
       return false;
@@ -106,10 +106,10 @@ export class UserCreateComponent implements OnInit {
       this.usersvc.create(this.user).subscribe(
         res => {
           console.debug("User Create Success! New User: ", res);
-          this.router.navigateByUrl(`/users/detail/${this.user.id}`);
+          this.router.navigateByUrl(`/users/detail/${res.id}`);
         },
         err => {
-          console.debug("ERROR: user-create.component.ts, usersvc.create(this.user)", err);
+          console.error("ERROR: user-create.component.ts, usersvc.create(this.user)", err);
         }
       );
     } else {

@@ -1,1 +1,66 @@
-<p>vendor-create works!</p>
+
+<app-menu></app-menu>
+
+<div class="component">
+
+    <h6>New Vendor</h6>
+
+    <div class="detail-table">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorCode" class="input-group-text fake-th">Code:</label>
+            </div>
+            <input id="vendorCode" name="Code" class="form-control" [(ngModel)]="vendor.code" type="text" placeholder="ex: Amazon">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorName" class="input-group-text fake-th">Name:</label>
+            </div>
+            <input id="vendorName" name="Name" class="form-control" [(ngModel)]="vendor.name" type="text" placeholder="ex: Amazon, Inc.">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorAddress" class="input-group-text fake-th">Address:</label>
+            </div>
+            <input id="vendorAddress" name="Address" class="form-control" [(ngModel)]="vendor.address" type="text" placeholder="Street Address">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorCity" class="input-group-text fake-th">City:</label>
+            </div>
+            <input id="vendorCity" name="City" class="form-control" [(ngModel)]="vendor.city" type="text" placeholder="ex: Cincinnati">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorState" class="input-group-text fake-th">State:</label>
+            </div>
+            <input id="vendorState" name="State" class="form-control" [(ngModel)]="vendor.state" type="text" placeholder="ex: OH">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorZip" class="input-group-text fake-th">Zip Code:</label>
+            </div>
+            <input id="vendorZip" name="Zip Code" class="form-control" [(ngModel)]="vendor.zip" type="text" placeholder="ex: 45219">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorPhone" class="input-group-text fake-th">Phone:</label>
+            </div>
+            <input id="vendorPhone" name="Phone Number" class="form-control" [(ngModel)]="vendor.phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="vendorEmail" class="input-group-text fake-th">Email:</label>
+            </div>
+            <input id="vendorEmail" name="Email" class="form-control" [(ngModel)]="vendor.email" type="email" placeholder="example@gmail.com">
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button (click)="save()" class="btn btn-primary btn-sm">Save</button>
+        <button (click)="cancel()" class="btn btn-danger btn-sm">Cancel</button>
+    </div>
+
+    <p>{{message}}</p>
+
+</div>

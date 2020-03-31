@@ -1,4 +1,43 @@
 
 <app-menu></app-menu>
 
-<p>vendor-list works!</p>
+<div class="component">
+
+    <div class="sub-header">
+        <h6>All Vendors</h6>
+        <div class="input-group input-group-sm search-box">
+            <input class="form-control" id="vendor-search" type="text" placeholder="Search" [(ngModel)]="searchCriteria">
+            <div class="input-group-append">
+                <label for="vendor-search" class="input-group-text">&#8981;</label>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-sm table-bordered table-striped">
+        <thead class="thead-light">
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vendors | vendorSearch:searchCriteria | sort:'code'">
+                <td>{{v.id}}</td>
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.address}}, {{v.city}}, {{v.state}} {{v.zip}}</td>
+                <td>{{v.phone}}</td>
+                <td><a href="mailto:{{v.email}}" target="_blank">{{v.email != null ? "Email" : ""}}</a></td>
+                <td>
+                    <a routerLink="/vendors/detail/{{v.id}}">Detail</a>
+                    <span> || </span>
+                    <a routerLink="/vendors/edit/{{v.id}}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

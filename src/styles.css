@@ -54,3 +54,21 @@
 .form-control::placeholder {
     color: rgb(163, 163, 163);
 }
+
+.sub-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1% 1%;
+}
+
+.sub-header h6 {
+    display: inline-block;
+    margin: 8px 0 0;
+}
+
+.search-box {
+    margin: 0;
+    min-width: 200px;
+    width: 50%;
+    max-width: 500px;
+}

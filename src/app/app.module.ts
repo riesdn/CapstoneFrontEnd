@@ -7,6 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { MenuComponent } from './menu/menu/menu.component';
+import { MenuItemComponent } from './menu/menu-item/menu-item.component';
+import { SortPipe } from './pipes/sort.pipe';
+
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
@@ -36,12 +40,13 @@ import { RequestlineDetailComponent } from './requestlines/requestline-detail/re
 import { RequestlineEditComponent } from './requestlines/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestlines/requestline-create/requestline-create.component';
 import { RequestlineSearchPipe } from './requestlines/requestline-search.pipe';
-import { MenuComponent } from './menu/menu/menu.component';
-import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MenuComponent,
+    MenuItemComponent,
+    SortPipe,
 
     UserListComponent,
     UserDetailComponent,
@@ -71,9 +76,7 @@ import { MenuItemComponent } from './menu/menu-item/menu-item.component';
     RequestlineDetailComponent,
     RequestlineEditComponent,
     RequestlineCreateComponent,
-    RequestlineSearchPipe,
-    MenuComponent,
-    MenuItemComponent
+    RequestlineSearchPipe
   ],
   imports: [
     BrowserModule,
