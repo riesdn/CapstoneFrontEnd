@@ -1,0 +1,23 @@
+
+<div class="component">
+    <form class="login-container">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="LoginUsername">Username:</label>
+            </div>
+            <input class="form-control" type="text" id="LoginUsername" name="username" [(ngModel)]="username" autocomplete="username">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="LoginPassword">Password:</label>
+            </div>
+            <input class="form-control" type="password" id="LoginPassword" name="password" [(ngModel)]="password" autocomplete="current-password">
+        </div>
+
+        <div class="button-group">
+            <button type="submit" (click)="login()" class="btn btn-primary">Login</button>
+        </div>
+        <div class="login-error">{{message}}</div>
+    </form>
+
+</div>

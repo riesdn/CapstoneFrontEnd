@@ -20,10 +20,12 @@ import { RequestlineListComponent } from './requestlines/requestline-list/reques
 import { RequestlineDetailComponent } from './requestlines/requestline-detail/requestline-detail.component';
 import { RequestlineEditComponent } from './requestlines/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestlines/requestline-create/requestline-create.component';
+import { LoginComponent } from './system/login/login.component';
 
 
 const routes: Routes = [
   { path: "", redirectTo: "/users/list", pathMatch: "full" },
+  { path: "login", component: LoginComponent },
 
   { path: "users", component: UserListComponent },
   { path: "users/list", component: UserListComponent },

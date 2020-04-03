@@ -7,10 +7,12 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+import { HeaderComponent } from './menu/header/header.component';
 import { MenuComponent } from './menu/menu/menu.component';
 import { MenuItemComponent } from './menu/menu-item/menu-item.component';
 import { SortPipe } from './pipes/sort.pipe';
 
+import { LoginComponent } from './system/login/login.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { UserDetailComponent } from './users/user-detail/user-detail.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
@@ -44,9 +46,13 @@ import { RequestlineSearchPipe } from './requestlines/requestline-search.pipe';
 @NgModule({
   declarations: [
     AppComponent,
+
+    HeaderComponent,
     MenuComponent,
     MenuItemComponent,
     SortPipe,
+
+    LoginComponent,
 
     UserListComponent,
     UserDetailComponent,

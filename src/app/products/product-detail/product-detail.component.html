@@ -1,1 +1,60 @@
-<p>product-detail works!</p>
+
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="component">
+    
+    <h6>Product Detail</h6>
+
+    <div class="detail-table">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productId" class="input-group-text fake-th">ID:</label>
+            </div>
+            <input id="productId" name="ID" class="form-control" [(ngModel)]="product.id" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productPartNbr" class="input-group-text fake-th">Part Number:</label>
+            </div>
+            <input id="productPartNbr" name="Part Number" class="form-control" [(ngModel)]="product.partNbr" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productName" class="input-group-text fake-th">Name:</label>
+            </div>
+            <input id="productName" class="form-control" [(ngModel)]="product.name" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label class="input-group-text fake-th" for="productPrice">Price:</label>
+            </div>
+            <input class="form-control" [(ngModel)]="product.price" type="number" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productUnit" class="input-group-text fake-th">Unit:</label>
+            </div>
+            <input id="productUnit" class="form-control" [(ngModel)]="product.unit" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productPhotoPath" class="input-group-text fake-th">Photo Path:</label>
+            </div>
+            <input id="productPhotoPath" class="form-control" [(ngModel)]="product.photoPath" type="url" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productVendor" class="input-group-text fake-th">Vendor:</label>
+            </div>
+            <input id="productVendor" class="form-control" [(ngModel)]="product.vendor.code" type="text" disabled>
+        </div>
+    </div>
+
+    <div class="button-group">
+        <button (click)="edit()" class="btn btn-primary btn-sm">Edit</button>
+        <button (click)="back()" class="btn btn-secondary btn-sm">Back</button>
+        <button (click)="delete()" class="btn btn-danger btn-sm">Delete</button>
+    </div>
+
+</div>

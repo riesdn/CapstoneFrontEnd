@@ -4,5 +4,14 @@
     <span class="nav-item dropdown" *ngFor="let m of menus">
         <app-menu-item [menu]="m"></app-menu-item>
     </span>
+    <span class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" routerLinkActive="active" title="My Account">{{loggedInUser == null ? "Login" : loggedInUser.username}}</a>
+        <div *ngIf="loggedInUser != null" class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/users/detail/{{loggedInUser.id}}">My Account</a>
+        </div>
+        <div *ngIf="loggedInUser == null" class="dropdown-menu">
+            <a class="dropdown-item" routerLink="/login">Login</a>
+        </div>
+    </span>
 
 </nav>

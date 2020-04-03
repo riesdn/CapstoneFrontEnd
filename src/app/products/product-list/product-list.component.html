@@ -1,4 +1,44 @@
 
+<app-header></app-header>
 <app-menu></app-menu>
 
-<p>product-list works!</p>
+<div class="component">
+
+    <div class="sub-header">
+        <h6>All Products</h6>
+        <div class="input-group input-group-sm search-box">
+            <input class="form-control" id="product-search" type="text" placeholder="Search" [(ngModel)]="searchCriteria">
+            <div class="input-group-append">
+                <label for="product-search" class="input-group-text">&#8981;</label>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-sm table-bordered table-striped">
+        <thead class="thead-light">
+            <th>ID</th>
+            <th>Part Number</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+            <th>Vendor</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of products | productSearch:searchCriteria | sort:'vendorId'">
+                <td>{{p.id}}</td>
+                <td>{{p.partNbr}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price | currency}}</td>
+                <td>{{p.unit}}</td>
+                <td>{{p.vendor.code}}</td>
+                <td>
+                    <a routerLink="/products/detail/{{p.id}}">Detail</a>
+                    <span> || </span>
+                    <a routerLink="/products/edit/{{p.id}}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

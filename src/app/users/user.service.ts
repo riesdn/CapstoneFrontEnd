@@ -10,6 +10,10 @@ const url: string = "http://localhost:51764/api/Users";
 })
 export class UserService {
 
+  login(username: any, password: any): Observable<User> {
+    return this.http.get(`${url}/${username}/${password}`) as Observable<User>;
+  }
+
   list(): Observable<User[]> {
     return this.http.get(`${url}`) as Observable<User[]>;
   }

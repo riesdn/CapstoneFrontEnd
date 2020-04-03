@@ -114,7 +114,6 @@ export class UserCreateComponent implements OnInit {
       );
     } else {
       console.log("save() failed error check.");
-      this.message = "Save failed.";
     }
 
   }

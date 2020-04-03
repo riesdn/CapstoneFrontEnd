@@ -1,1 +1,63 @@
-<p>product-edit works!</p>
+
+<app-header></app-header>
+<app-menu></app-menu>
+
+<div class="component">
+    
+    <h6>New Product</h6>
+
+    <form class="detail-table">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productId" class="input-group-text fake-th">ID:</label>
+            </div>
+            <input id="productId" name="ID" class="form-control" [(ngModel)]="product.id" type="text" disabled>
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productPartNbr" class="input-group-text fake-th">Part Number:</label>
+            </div>
+            <input id="productPartNbr" name="partNbr" class="form-control" [(ngModel)]="product.partNbr" type="text" placeholder="ex: Echo">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productName" class="input-group-text fake-th">Name:</label>
+            </div>
+            <input id="productName" class="form-control" name="name" [(ngModel)]="product.name" type="text" placeholder="ex: Amazon Echo">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label class="input-group-text fake-th" for="productPrice">Price:</label>
+            </div>
+            <input class="form-control" name="price" [(ngModel)]="product.price" type="number" placeholder="0.00">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productUnit" class="input-group-text fake-th">Unit:</label>
+            </div>
+            <input id="productUnit" class="form-control" name="unit" [(ngModel)]="product.unit" type="text" placeholder="ex: each">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productPhotoPath" class="input-group-text fake-th">Photo Path:</label>
+            </div>
+            <input id="productPhotoPath" class="form-control" name="photoPath" [(ngModel)]="product.photoPath" type="url" placeholder="ex: https://shutterstock.com/" pattern="https://.*">
+        </div>
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <label for="productVendor" class="input-group-text fake-th">Vendor:</label>
+            </div>
+            <select class="custom-select" id="productVendor" name="vendorId" [(ngModel)]="product.vendorId">
+                <option *ngFor="let v of vendors" value="{{v.id}}">{{v.code}}</option>    
+            </select>
+        </div>
+    </form>
+
+    <div class="button-group">
+        <button type="submit" (click)="save()" class="btn btn-primary btn-sm">Save</button>
+        <button (click)="cancel()" class="btn btn-secondary btn-sm">Cancel</button>
+    </div>
+
+    <div>{{message}}</div>
+
+</div>
