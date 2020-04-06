@@ -14,8 +14,7 @@ export class VendorListComponent implements OnInit {
   searchCriteria: string = '';
 
   constructor(
-    private vendorsvc: VendorService,
-    private router: Router
+    private vendorsvc: VendorService
   ) { }
 
   ngOnInit(): void {

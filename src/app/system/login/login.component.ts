@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
         if(res != null) {
           this.sys.loggedInUser = res;
           console.debug("Loggin In User: ", res);
-          this.router.navigateByUrl("/requests/list");
+          this.router.navigateByUrl("/requests/forReview");
         } else {
           console.warn("Username or Password incorrect!")
           this.message = "Incorrect username or password.";

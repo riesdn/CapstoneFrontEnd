@@ -3,7 +3,7 @@
 <div class="dropdown-menu">
     <a class="dropdown-item" routerLink="{{menu.mainRoute}}">All {{menu.display}}s</a>
     <div *ngIf="menu.baseRoute == '/requests/'">
-        <a class="dropdown-item" routerLink="/forReview">Review Requests</a>
+        <a class="dropdown-item" routerLink="/requests/forReview">Review Requests</a>
     </div>
     <a class="dropdown-item" routerLink="{{menu.baseRoute + 'create'}}">New {{menu.display}}</a>
 </div>

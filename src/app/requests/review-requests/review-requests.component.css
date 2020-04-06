@@ -1,0 +1,11 @@
+
+.review-requests-message {
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    font-weight: normal;
+    margin: 3% auto;
+    width: 75%;
+    max-width: 640px;
+    text-align: center;
+    padding: 7%;
+}

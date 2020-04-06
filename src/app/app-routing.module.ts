@@ -21,6 +21,7 @@ import { RequestlineDetailComponent } from './requestlines/requestline-detail/re
 import { RequestlineEditComponent } from './requestlines/requestline-edit/requestline-edit.component';
 import { RequestlineCreateComponent } from './requestlines/requestline-create/requestline-create.component';
 import { LoginComponent } from './system/login/login.component';
+import { ReviewRequestsComponent } from './requests/review-requests/review-requests.component';
 
 
 const routes: Routes = [
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: "products/create", component: ProductCreateComponent },
 
   { path: "requests", component: RequestListComponent },
+  { path: "requests/forReview", component: ReviewRequestsComponent },
   { path: "requests/list", component: RequestListComponent },
   { path: "requests/detail/:id", component: RequestDetailComponent },
   { path: "requests/edit/:id", component: RequestEditComponent },
