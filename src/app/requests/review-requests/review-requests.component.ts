@@ -16,6 +16,34 @@ export class ReviewRequestsComponent implements OnInit {
   searchCriteria: string = '';
   message: string = '';
 
+  approve(request: Request): void {
+    this.requestsvc.approve(request).subscribe(
+      res => { 
+        console.debug("Request approved!", res);
+        this.refresh();
+      },
+      err => {
+        console.error("ERROR: review-requests.component.ts, requestsvc.approve(request)", err);
+      }
+    );
+  }
+
+  reject(): void {
+
+  }
+
+  refresh(): void {
+    this.requestsvc.reviewList().subscribe(
+      res => {
+        this.requests = res;
+        console.debug("Requests to Review: ", res);
+      },
+      err => {
+        console.error("ERROR: review-requests.component.ts, requestsvc.reviewList()", err);
+      }
+    );
+  }
+
   constructor(
     private requestsvc: RequestService,
     private sys: SystemService
@@ -24,15 +52,7 @@ export class ReviewRequestsComponent implements OnInit {
   ngOnInit(): void {
 
     if(this.sys.loggedInUser != null) {
-      this.requestsvc.reviewList().subscribe(
-        res => {
-          this.requests = res;
-          console.debug("Requests to Review: ", res);
-        },
-        err => {
-          console.error("ERROR: review-requests.component.ts, requestsvc.reviewList()", err);
-        }
-      );
+      this.refresh();
     } else {
       this.message = "Please log in to see Requests ready to review.";
     }

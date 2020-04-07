@@ -15,12 +15,8 @@ export class RequestDetailComponent implements OnInit {
   request: Request = new Request();
   loggedInUser: User = this.sys.loggedInUser;
 
-  review(): void {
-
-  }
-
   edit(): void {
-
+    this.router.navigateByUrl(`/requests/edit/${this.request.id}`);
   }
 
   back(): void {
@@ -28,11 +24,15 @@ export class RequestDetailComponent implements OnInit {
   }
 
   delete(): void {
-
-  }
-
-  addLine(): void {
-
+    this.requestsvc.remove(this.request).subscribe(
+      res => {
+        console.debug("Request Delete successful.", res);
+        this.router.navigateByUrl("/requests/list");
+      },
+      err => {
+        console.error("ERROR: request-detail.component.ts, requestsvc.remove(this.request)", err);
+      }
+    );
   }
 
   constructor(

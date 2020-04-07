@@ -5,17 +5,21 @@
 <div class="component">
 
     <form class="detail-table">
-        <div class="input-group input-group-sm form-inline">
-            <div class="input-group-prepend">
-                <label for="requestId" class="input-group-text fake-th">ID:</label>
+        <h6>Request Detail</h6>
+
+        <div class="form-row">
+            <div class="input-group input-group-sm col my-0">
+                <div class="input-group-prepend">
+                    <label for="requestId" class="input-group-text fake-th">ID:</label>
+                </div>
+                <input id="requestId" name="id" type="number" class="form-control" [(ngModel)]="request.id" disabled>
             </div>
-            <input id="requestId" name="id" type="number" class="form-control" [(ngModel)]="request.id" disabled>
-        </div>
-        <div class="input-group input-group-sm form-inline">
-            <div class="input-group-prepend">
-                <label for="requestUser" class="input-group-text fake-th">User:</label>
+            <div class="input-group input-group-sm col-md-8 my-0">
+                <div class="input-group-prepend">
+                    <label for="requestUser" class="input-group-text fake-th">User:</label>
+                </div>
+                <input id="requestUser" name="user" type="text" class="form-control" value="{{request.user != null ? request.user.username : ''}}" disabled>
             </div>
-            <input id="requestUser" name="user" type="text" class="form-control" value="{{request.user != null ? request.user.username : ''}}" disabled>
         </div>
         <div class="input-group input-group-sm">
             <div class="input-group-prepend">
@@ -29,29 +33,33 @@
             </div>
             <input id="requestJustification" name="justification" type="text" class="form-control" [(ngModel)]="request.justification" disabled>
         </div>
-        <div class="input-group input-group-sm">
-            <div class="input-group-prepend">
-                <label for="requestDelivery" class="input-group-text fake-th">Delivery Mode:</label>
+        <div class="form-row">
+            <div class="input-group input-group-sm col mt-0">
+                <div class="input-group-prepend">
+                    <label for="requestTotal" class="input-group-text fake-th">Total:</label>
+                </div>
+                <input id="requestTotal" name="total" type="text" class="form-control" value="{{request.total | currency}}" disabled>
             </div>
-            <input id="requestDelivery" name="deliveryMode" type="text" class="form-control" [(ngModel)]="request.deliveryMode" disabled>
+            <div class="input-group input-group-sm col-md-8 mt-0">
+                <div class="input-group-prepend">
+                    <label for="requestDelivery" class="input-group-text fake-th">Delivery Mode:</label>
+                </div>
+                <input id="requestDelivery" name="deliveryMode" type="text" class="form-control" [(ngModel)]="request.deliveryMode" disabled>
+            </div>
         </div>
-        <div class="input-group input-group-sm">
-            <div class="input-group-prepend">
-                <label for="requestTotal" class="input-group-text fake-th">Total:</label>
+        <div class="form-row">
+            <div class="input-group input-group-sm col-md-4 my-0 ml-0">
+                <div class="input-group-prepend">
+                    <label for="requestStatus" class="input-group-text fake-th">Status:</label>
+                </div>
+                <input id="requestStatus" name="status" type="text" class="form-control" [(ngModel)]="request.status" disabled>
             </div>
-            <input id="requestTotal" name="total" type="text" class="form-control" value="{{request.total | currency}}" disabled>
-        </div>
-        <div class="input-group input-group-sm">
-            <div class="input-group-prepend">
-                <label for="requestStatus" class="input-group-text fake-th">Status:</label>
+            <div class="input-group input-group-sm col-md-8 my-0" *ngIf="request.rejectionReason != null">
+                <div class="input-group-prepend">
+                    <label for="requestRejection" class="input-group-text fake-th">Rejection Reason:</label>
+                </div>
+                <input id="requestRejection" name="rejectionReason" type="text" class="form-control" [(ngModel)]="request.rejectionReason" disabled>
             </div>
-            <input id="requestStatus" name="status" type="text" class="form-control" [(ngModel)]="request.status" disabled>
-        </div>
-        <div class="input-group input-group-sm" *ngIf="request.rejectionReason != null">
-            <div class="input-group-prepend">
-                <label for="requestRejection" class="input-group-text fake-th">Rejection Reason:</label>
-            </div>
-            <input id="requestRejection" name="rejectionReason" type="text" class="form-control" [(ngModel)]="request.rejectionReason" disabled>
         </div>
     </form>
 
@@ -60,7 +68,5 @@
         <button class="btn btn-sm btn-secondary" (click)="back()">Back</button>
         <button class="btn btn-sm btn-danger" (click)="delete()">Delete</button>
     </div>
-
-    <app-requestline-list></app-requestline-list>
 
 </div>

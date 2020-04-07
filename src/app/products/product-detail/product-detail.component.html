@@ -48,7 +48,7 @@
             <div class="input-group-prepend">
                 <label for="productVendor" class="input-group-text fake-th">Vendor:</label>
             </div>
-            <input id="productVendor" class="form-control" [(ngModel)]="product.vendor.code" type="text" disabled>
+            <input id="productVendor" class="form-control" value="{{product.vendor != null ? product.vendor.code : ''}}" type="text" disabled>
         </div>
     </div>
 

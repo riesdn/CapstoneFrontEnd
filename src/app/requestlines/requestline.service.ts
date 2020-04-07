@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Requestline } from './requestline.class';
 
-const url: string = ""
+const url: string = "http://localhost:51764/api/RequestLines";
 
 @Injectable({
   providedIn: 'root'

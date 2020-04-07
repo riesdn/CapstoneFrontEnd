@@ -27,17 +27,19 @@
             <input class="form-control" aria-label="First Name" [(ngModel)]="user.firstName" type="text" placeholder="First Name">
             <input class="form-control" aria-label="Last Name" [(ngModel)]="user.lastName" type="text" placeholder="Last Name">
         </div>
-        <div class="input-group input-group-sm">
-            <div class="input-group-prepend">
-                <label for="userPhone" class="input-group-text fake-th">Phone:</label>
+        <div class="form-row">
+            <div class="input-group input-group-sm col mt-0">
+                <div class="input-group-prepend">
+                    <label for="userPhone" class="input-group-text fake-th">Phone:</label>
+                </div>
+                <input id="userPhone" class="form-control" [(ngModel)]="user.phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx">
             </div>
-            <input id="userPhone" class="form-control" [(ngModel)]="user.phone" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx">
-        </div>
-        <div class="input-group input-group-sm">
-            <div class="input-group-prepend">
-                <label for="userEmail" class="input-group-text fake-th">Email:</label>
+            <div class="input-group input-group-sm col mt-0">
+                <div class="input-group-prepend">
+                    <label for="userEmail" class="input-group-text fake-th">Email:</label>
+                </div>
+                <input id="userEmail" class="form-control" [(ngModel)]="user.email" type="email" placeholder="example@gmail.com">
             </div>
-            <input id="userEmail" class="form-control" [(ngModel)]="user.email" type="email" placeholder="example@gmail.com">
         </div>
         <div class="inline-checkboxes">
             <div class="form-check form-check-inline user-checkbox user-checkbox-enabled">

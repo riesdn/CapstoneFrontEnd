@@ -53,10 +53,10 @@ const routes: Routes = [
   { path: "requests/edit/:id", component: RequestEditComponent },
   { path: "requests/create", component: RequestCreateComponent },
 
-  { path: "requestlines/list", component: RequestlineListComponent },
+  { path: "requestlines/list/:requestId", component: RequestlineListComponent },
   { path: "requestlines/detail/:id", component: RequestlineDetailComponent },
   { path: "requestlines/edit/:id", component: RequestlineEditComponent },
-  { path: "requestlines/create", component: RequestlineCreateComponent },
+  { path: "requestlines/create/:requestId", component: RequestlineCreateComponent },
 
   { path: "**", component: UserListComponent }
 ];
