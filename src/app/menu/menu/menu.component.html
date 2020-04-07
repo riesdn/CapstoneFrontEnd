@@ -8,7 +8,7 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" routerLinkActive="active" title="My Account">{{loggedInUser == null ? "Login" : loggedInUser.username}}</a>
         <div *ngIf="loggedInUser != null" class="dropdown-menu">
             <a class="dropdown-item" routerLink="/users/detail/{{loggedInUser.id}}">My Account</a>
-            <a class="dropdown-item">Logout</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
         </div>
         <div *ngIf="loggedInUser == null" class="dropdown-menu">
             <a class="dropdown-item" routerLink="/login">Login</a>

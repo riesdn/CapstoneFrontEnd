@@ -43,6 +43,7 @@ import { RequestlineEditComponent } from './requestlines/requestline-edit/reques
 import { RequestlineCreateComponent } from './requestlines/requestline-create/requestline-create.component';
 import { RequestlineSearchPipe } from './requestlines/requestline-search.pipe';
 import { ReviewRequestsComponent } from './requests/review-requests/review-requests.component';
+import { ReviewDetailComponent } from './requests/review-detail/review-detail.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { ReviewRequestsComponent } from './requests/review-requests/review-reque
     RequestlineEditComponent,
     RequestlineCreateComponent,
     RequestlineSearchPipe,
-    ReviewRequestsComponent
+    ReviewRequestsComponent,
+    ReviewDetailComponent
   ],
   imports: [
     BrowserModule,

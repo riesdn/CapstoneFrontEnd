@@ -19,7 +19,7 @@ export class RequestCreateComponent implements OnInit {
     this.requestsvc.create(this.request).subscribe(
       res => {
         console.debug("New Request: ", res);
-        this.router.navigateByUrl(`/requests/detail/${res.id}`);
+        this.router.navigateByUrl(`/requestlines/list/${res.id}`);
       },
       err => {
         console.error("ERROR: request-create.component.ts, requestsvc.create(this.request)");

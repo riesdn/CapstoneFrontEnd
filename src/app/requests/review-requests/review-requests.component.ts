@@ -14,6 +14,8 @@ export class ReviewRequestsComponent implements OnInit {
   requests: Request[] = [];
   loggedInUser: User = this.sys.loggedInUser;
   searchCriteria: string = '';
+  // beingRejected: boolean = false;
+  rejectionReason: string = '';
   message: string = '';
 
   approve(request: Request): void {
@@ -28,8 +30,22 @@ export class ReviewRequestsComponent implements OnInit {
     );
   }
 
-  reject(): void {
-
+  reject(request: Request): void {
+    if(this.rejectionReason != null) {
+      request.rejectionReason = this.rejectionReason;
+      this.requestsvc.reject(request).subscribe(
+        res => {
+          console.debug("Request rejected. Rejection Reason: ", request.rejectionReason, res);
+          this.refresh();
+          this.rejectionReason = "";
+        },
+        err => {
+          console.error("ERROR: review-requests.component.ts, requestsvc.reject(request)", err);
+        }
+      );
+    } else {
+      console.error("ERROR: Request must have a rejection reason!!");
+    }
   }
 
   refresh(): void {

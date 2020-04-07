@@ -42,6 +42,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    if(this.sys.loggedInUser != null) {
+      this.router.navigateByUrl("/users/list");
+    }
+
   }
 
 }

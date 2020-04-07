@@ -43,7 +43,7 @@
                     <td>
                         <button class="btn btn-link m-0 p-0" (click)="approve(r)">Approve</button>
                         <span> || </span>
-                        <button class="btn btn-link m-0 p-0">Reject</button>
+                        <button class="btn btn-link m-0 p-0" (click)="reject(r)">Reject</button>
                     </td>
                 </tr>
             </tbody>
@@ -54,5 +54,16 @@
     <div *ngIf="loggedInUser == null">
         <h5 class="review-requests-message text-muted">{{message}}</h5>
     </div>
+
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <label for="rejectionReasonBox" class="input-group-text">Rejection Reason:</label>
+        </div>
+        <textarea id="rejectionReasonBox" name="rejectionReason" class="form-control" placeholder="Why are you rejecting this request? Please keep your answer under 80 characters." [(ngModel)]="rejectionReason"></textarea>
+    </div>
+
+    <!-- <div *ngIf="!beingRejected">
+        <app-review-detail></app-review-detail>
+    </div> -->
 
 </div>

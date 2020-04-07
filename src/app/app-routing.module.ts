@@ -25,7 +25,7 @@ import { ReviewRequestsComponent } from './requests/review-requests/review-reque
 
 
 const routes: Routes = [
-  { path: "", redirectTo: "/users/list", pathMatch: "full" },
+  { path: "", redirectTo: "/login", pathMatch: "full" },
   { path: "login", component: LoginComponent },
 
   { path: "users", component: UserListComponent },
